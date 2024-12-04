@@ -1,0 +1,21 @@
+Rappels: 
+
+
+* classes en JS
+* composants en React
+* modules ( export default / import from '' - export / import {} )
+* JSX - babel
+
+html 
+<div id="root"></div>
+
+JS
+
+let container = document.getElementById("root");
+let root = ReactDOM.createRoot(container);
+
+root.render(<App />)
+
+function App(){
+    return jsx
+}
