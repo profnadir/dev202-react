@@ -1,0 +1,16 @@
+Composants : fonction // classe
+
+props 
+
+jsx
+
+ES6 : 
+array functions : map filter find reduce 
+... spread
+destructuring
+les modules : import / export
+
+SPA vs MPA
+
+state ? 
+
