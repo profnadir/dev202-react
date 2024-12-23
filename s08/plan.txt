@@ -1,0 +1,11 @@
+ES6
+
+Composant : class fonction
+
+props : c f
+
+state : c f 
+
+events : f c
+
+50%
