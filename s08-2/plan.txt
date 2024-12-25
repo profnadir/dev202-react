@@ -1,0 +1,23 @@
+les événements :
+
+onClick : button div
+onChange : input
+onSubmit : form
+
+
+const [var, setVar] = useState();
+<input type="text" value={var} onChange={e => setVar(e.target.value)} />
+
+this.state={
+    var : ""
+}
+<input type="text" value={this.state.var} 
+    onChange={e => this.setState({var : e.target.value })} />
+
+
+
+Cycle de vie des composants
+
+class : constructeur render ... ? 
+
+function : useEffect ... ?
