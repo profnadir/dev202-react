@@ -1,0 +1,64 @@
+npm install redux react-redux
+
+//main.js | index.js
+import {legacy_createStore as create_store} from 'redux'
+import reducer from './store/reducer.js'
+import {Provider} from 'react-redux'
+
+
+const store = create_store(reducer)
+
+<Provider store={store}>
+    <App />
+</Provider>
+
+//reducer.js
+
+const initialState = {
+    articles : []
+}
+
+function reducer = (state = initialState, action) => {
+    //traitement selon action.type
+    if(action.type =="ajouter"){
+        return { ...state, articles: [...state.articles, action.payload] }
+    }
+    if(action.type == "modifier"){
+        return {...state, // modification : action.payload}
+    }
+    return state
+}
+export default reducer
+
+//App.js
+
+import {connect} from 'react-redux'
+
+function App(props)
+{
+
+    <p>Total : {props.articles.length}</p>
+
+    return (
+        <button onClick={() => props.ajouter(article)}>Ajouter</button>
+        <button onClick={() => props.modifier(id)}>Modifier</button>
+    )
+}
+
+const mapStateToProps = (state) => {
+    return {
+        articles : () => state.articles
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        ajouter : (article) => dispatch({type:"ajouter",payload:article}),
+        modifier : (id) => dispatch({type:"modier",payload:id})
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+//connect
+// hooks : useSelector , useDispatch
