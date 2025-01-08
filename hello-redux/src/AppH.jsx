@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
 import { useState } from 'react'
 import * as types from './store/actionsTypes'
+import * as actions from './store/actionsCreators'
 
 function AppH(props) {
 
@@ -13,17 +14,20 @@ function AppH(props) {
   return (
     <>
       <p>Compteur : {num} </p>
-     <button onClick={() => dispatch({type:types.INC})}>Incrementer</button>
+     <button onClick={() => dispatch(actions.inc())}>Incrementer</button>
 
-     <button onClick={() => dispatch({type: types.DEC})}>Decrementer</button>
+     <button onClick={() => dispatch(actions.dec())}>Decrementer</button>
 
-     <button onClick={() => dispatch({type : types.RESET})}>Reset</button>
+     <button onClick={() => dispatch(actions.reset())}>Reset</button>
      <div>
-      <button onClick={() => dispatch({type:types.INCBY,payload : step*1})}>Incrementer By</button>
+      <button onClick={() => dispatch(actions.incBy(step*1))}>Incrementer By</button>
 
-      <button onClick={() => dispatch({type:types.DECBY,payload : step*1})}>Decrementer By</button>
+      <button onClick={() => dispatch(actions.decBy(step*1))}>Decrementer By</button>
 
       <input type="text" value={step} onChange={e=>setStep(e.target.value)}/>
+
+      <hr/>
+     {/*  <button onClick={() => dispatch(actions.addArticle({id,title,body}))}>ADD ARTICLE</button> */}
      </div>
     </>
   )

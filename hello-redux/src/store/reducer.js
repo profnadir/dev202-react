@@ -2,7 +2,16 @@ import * as types from "./actionsTypes"
 
 const initialState = {
     num : 0,
-    test:true
+    test:true,
+    articles : {
+        user : {},
+        data : [{
+            id:0,
+            images:[{},{}]
+        },{}],
+        likes: 5
+    }
+   /*  articles : [] */
 }
 
 /* 
@@ -53,6 +62,8 @@ const reducer = (state = initialState, action) => {
                 return {...state, num : state.num + action.payload}
             case types.DECBY:
                 return {...state, num : state.num - action.payload}
+            /* case types.ADD_ARTICLE:
+                return {...state, article : [...state.articles, action.payload]} */
             default:
                 return state
         }
